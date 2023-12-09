@@ -15,7 +15,7 @@ with open('random_forest_model.pkl', 'rb') as model_file:
 # Streamlit App Header
 st.title('PCOS Prediction using Machine Learning')
 
- # Replace 'your_logo.png' with the actual filename of your logo
+
 
 
 
@@ -29,6 +29,8 @@ col1.subheader('Department of Computer Science and Engineering, National Institu
 col2.image('Unknown.png', width=100) 
 
 
+import streamlit as st
+
 
 
 
@@ -37,16 +39,16 @@ col2.image('Unknown.png', width=100)
 st.sidebar.header('User Input Features')
 
 # Create sliders for numeric features
-rr = st.sidebar.slider('RR (breaths/min)', 0, 100, 50)
-cycle = st.sidebar.slider('Cycle(R/I)', 0, 100, 50)
-marriage_status = st.sidebar.slider('Marriage Status (Yrs)', 0.0, 50.0, 25.0)
-fsh_lh = st.sidebar.slider('FSH/LH', 0.0, 100.0, 50.0)
-hip = st.sidebar.slider('Hip(inch)', 0, 100, 50)
-amh = st.sidebar.slider('AMH(ng/mL)', 0.0, 10.0, 5.0)
-rbs = st.sidebar.slider('RBS(mg/dl)', 0.0, 300.0, 150.0)
-follicle_L = st.sidebar.slider('Follicle No. (L)', 0, 100, 50)
-follicle_R = st.sidebar.slider('Follicle No. (R)', 0, 100, 50)
-avg_f_size = st.sidebar.slider('Avg. F size (L) (mm)', 0.0, 30.0, 15.0)
+rr = st.sidebar.slider('RR (breaths/min)', 10, 30, 20)
+cycle = st.sidebar.slider('Cycle(R/I)', 0, 10, 5)
+marriage_status = st.sidebar.slider('Marriage Status (Yrs)', 0.0, 80.0, 25.0)
+fsh_lh = st.sidebar.slider('FSH/LH', 0.0, 1500.0, 50.0)
+hip = st.sidebar.slider('Hip(inch)', 10, 60, 10)
+amh = st.sidebar.slider('AMH(ng/mL)', 0.0, 50.0, 5.0)
+rbs = st.sidebar.slider('RBS(mg/dl)', 50.0, 500.0, 150.0)
+follicle_L = st.sidebar.slider('Follicle No. (L)', 0, 500, 50)
+follicle_R = st.sidebar.slider('Follicle No. (R)', 0, 500, 50)
+avg_f_size = st.sidebar.slider('Avg. F size (L) (mm)', 0.0, 50.0, 15.0)
 
 # Create radio buttons for yes/no fields
 pregnant = st.sidebar.radio('Pregnant(Y/N)', ['No', 'Yes'])
